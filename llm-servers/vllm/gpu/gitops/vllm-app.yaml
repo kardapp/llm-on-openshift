@@ -8,7 +8,7 @@ metadata:
     purpose: vllm-app
 spec:
   destination:
-    namespace: default
+    namespace: timtest
     server: 'https://kubernetes.default.svc'
   project: default
   source:
