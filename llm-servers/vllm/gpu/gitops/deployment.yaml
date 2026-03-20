@@ -48,7 +48,10 @@ spec:
             failureThreshold: 3
           env:
             - name: HUGGING_FACE_HUB_TOKEN
-              value: ''
+              valueFrom:
+                secretKeyRef:
+                  name: hf-token
+                  key: HUGGING_FACE_HUB_TOKEN
           args: [
             "--model",
             "meta-llama/Llama-3.2-3B-Instruct",
