@@ -53,6 +53,8 @@ spec:
               #    name: hf-token
               #    key: HUGGING_FACE_HUB_TOKEN
               value: ''
+            - name: HF_HOME
+              value: /models-cache
           args: [
             "--model",
             "Qwen/Qwen3-30B-A3B-GPTQ-Int4",
@@ -88,7 +90,7 @@ spec:
             failureThreshold: 24
           volumeMounts:
             - name: models-cache
-              mountPath: /.cache
+              mountPath: /models-cache
             - name: shm
               mountPath: /dev/shm
           terminationMessagePolicy: File
