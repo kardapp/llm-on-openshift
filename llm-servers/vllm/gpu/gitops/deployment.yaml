@@ -51,7 +51,7 @@ spec:
               value: ''
           args: [
             "--model",
-            "Qwen/Qwen3.5-9B",
+            "mistralai/Devstral-Small-2-24B-Instruct-2512",
             "--download-dir",
             "/models-cache",
             "--dtype", "float16",
