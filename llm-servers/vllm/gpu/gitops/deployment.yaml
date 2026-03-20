@@ -23,6 +23,9 @@ spec:
         fsGroup: 1000
       containers:
         - resources:
+            requests:
+              cpu: '1'
+              memory: 8Gi
             limits:
               cpu: '8'
               memory: 24Gi
