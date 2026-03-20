@@ -56,7 +56,7 @@ spec:
             "/models-cache",
             "--dtype", "float16",
             "--max-model-len", "262144",
-            "--tensor-parallel-size", "2"
+            "--tensor-parallel-size", "1"
             ]
           securityContext:
             capabilities:
@@ -86,7 +86,7 @@ spec:
             - name: shm
               mountPath: /dev/shm
           terminationMessagePolicy: File
-          image: 'quay.io/rh-aiservices-bu/vllm-openai-ubi9:latest'
+          image: 'docker.io/vllm/vllm-openai:v0.17.0'
       volumes:
         - name: models-cache
           persistentVolumeClaim:
@@ -94,7 +94,7 @@ spec:
         - name: shm
           emptyDir:
             medium: Memory
-            sizeLimit: 1Gi
+            sizeLimit: 8Gi
       dnsPolicy: ClusterFirst
   strategy:
     type: Recreate
