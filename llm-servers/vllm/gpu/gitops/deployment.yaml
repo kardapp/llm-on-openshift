@@ -71,7 +71,7 @@ spec:
             "--download-dir",
             "/models-cache",
             "--dtype", "float16",
-            "--max-model-len", "12288",
+            "--max-model-len", "8192",
             "--tensor-parallel-size", "1"
             ]
           securityContext:
