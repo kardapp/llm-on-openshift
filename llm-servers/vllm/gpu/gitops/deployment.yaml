@@ -54,8 +54,12 @@ spec:
               #    name: hf-token
               #    key: HUGGING_FACE_HUB_TOKEN
               value: ''
+            - name: HOME
+              value: /models-cache
             - name: HF_HOME
               value: /models-cache
+            - name: VLLM_CACHE_ROOT
+              value: /models-cache/.cache/vllm
           args: [
             "--model",
             "Qwen/Qwen3-30B-A3B-GPTQ-Int4",
