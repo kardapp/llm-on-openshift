@@ -48,10 +48,11 @@ spec:
             failureThreshold: 3
           env:
             - name: HUGGING_FACE_HUB_TOKEN
-              valueFrom:
-                secretKeyRef:
-                  name: hf-token
-                  key: HUGGING_FACE_HUB_TOKEN
+              #valueFrom:
+              #  secretKeyRef:
+              #    name: hf-token
+              #    key: HUGGING_FACE_HUB_TOKEN
+              value: ''
           args: [
             "--model",
             "Qwen/Qwen3-30B-A3B-GPTQ-Int4",
