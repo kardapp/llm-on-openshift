@@ -54,17 +54,19 @@ spec:
                   key: HUGGING_FACE_HUB_TOKEN
           args: [
             "--model",
-            "meta-llama/Llama-3.2-3B-Instruct",
+            "Qwen/Qwen3-30B-A3B-GPTQ-Int4",
             "--download-dir",
             "/models-cache",
             "--dtype", "float16",
-            "--max-model-len", "6144",
+            "--quantization", "gptq",
+            "--max-model-len", "8192",
             "--tensor-parallel-size", "1"
             ]
           securityContext:
             capabilities:
               drop:
                 - ALL
+            runAsUser: 1000
             runAsNonRoot: true
             allowPrivilegeEscalation: false
             seccompProfile:
@@ -89,7 +91,7 @@ spec:
             - name: shm
               mountPath: /dev/shm
           terminationMessagePolicy: File
-          image: 'quay.io/rh-aiservices-bu/vllm-openai-ubi9:latest'
+          image: 'docker.io/vllm/vllm-openai:v0.17.0'
       volumes:
         - name: models-cache
           persistentVolumeClaim:
@@ -97,7 +99,7 @@ spec:
         - name: shm
           emptyDir:
             medium: Memory
-            sizeLimit: 1Gi
+            sizeLimit: 8Gi
       dnsPolicy: ClusterFirst
   strategy:
     type: Recreate
