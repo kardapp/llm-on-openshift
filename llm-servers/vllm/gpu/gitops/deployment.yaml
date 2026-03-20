@@ -55,7 +55,9 @@ spec:
             "--download-dir",
             "/models-cache",
             "--dtype", "float16",
-            "--max-model-len", "6144" ]
+            "--max-model-len", "262144",
+            "--tensor-parallel-size", "2"
+            ]
           securityContext:
             capabilities:
               drop:
