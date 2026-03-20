@@ -5,7 +5,6 @@ metadata:
   labels:
     app: vllm
 spec:
-  clusterIP: None
   ipFamilies:
     - IPv4
   ports:
