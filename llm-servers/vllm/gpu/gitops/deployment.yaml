@@ -19,7 +19,8 @@ spec:
       schedulerName: default-scheduler
       affinity: {}
       terminationGracePeriodSeconds: 120
-      securityContext: {}
+      securityContext:
+        fsGroup: 1000
       containers:
         - resources:
             limits:
