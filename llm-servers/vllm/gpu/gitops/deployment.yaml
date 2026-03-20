@@ -64,12 +64,11 @@ spec:
               value: "8000"
           args: [
             "--model",
-            "Qwen/Qwen3-30B-A3B-GPTQ-Int4",
+            "Qwen/Qwen3.5-9B",
             "--download-dir",
             "/models-cache",
             "--dtype", "float16",
-            "--quantization", "gptq",
-            "--max-model-len", "32768",
+            "--max-model-len", "16384",
             "--tensor-parallel-size", "1"
             ]
           securityContext:
