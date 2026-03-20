@@ -11,3 +11,4 @@ resources:
 # wave 1
 - deployment.yaml
 - service.yaml
+- scc.yaml
