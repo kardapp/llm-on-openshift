@@ -60,6 +60,8 @@ spec:
               value: /models-cache
             - name: VLLM_CACHE_ROOT
               value: /models-cache/.cache/vllm
+            - name: VLLM_PORT
+              value: "8000"
           args: [
             "--model",
             "Qwen/Qwen3-30B-A3B-GPTQ-Int4",
