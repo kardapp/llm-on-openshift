@@ -51,11 +51,11 @@ spec:
               value: ''
           args: [
             "--model",
-            "mistralai/Devstral-Small-2-24B-Instruct-2512",
+            "meta-llama/Llama-3.2-3B-Instruct",
             "--download-dir",
             "/models-cache",
             "--dtype", "float16",
-            "--max-model-len", "262144",
+            "--max-model-len", "6144",
             "--tensor-parallel-size", "1"
             ]
           securityContext:
@@ -86,7 +86,7 @@ spec:
             - name: shm
               mountPath: /dev/shm
           terminationMessagePolicy: File
-          image: 'docker.io/vllm/vllm-openai:v0.17.0'
+          image: 'quay.io/rh-aiservices-bu/vllm-openai-ubi9:latest'
       volumes:
         - name: models-cache
           persistentVolumeClaim:
@@ -94,7 +94,7 @@ spec:
         - name: shm
           emptyDir:
             medium: Memory
-            sizeLimit: 8Gi
+            sizeLimit: 1Gi
       dnsPolicy: ClusterFirst
   strategy:
     type: Recreate
