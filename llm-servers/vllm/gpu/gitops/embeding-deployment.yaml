@@ -28,6 +28,9 @@ spec:
         - name: ollama
           image: ollama/ollama:latest
           imagePullPolicy: Always
+          env:
+            - name: OLLAMA_NO_GPU
+              value: "1"
           resources:
             limits:
               cpu: 8
