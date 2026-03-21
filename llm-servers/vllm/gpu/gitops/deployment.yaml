@@ -61,11 +61,9 @@ spec:
               value: /models-cache/.cache/vllm
             - name: VLLM_PORT
               value: "8000"
-            {# - name: VLLM_LOGGING_LEVEL
-              value: DEBUG #}
           args: [
             "--model",
-            "google/codegemma-7b-it",
+            "mistralai/Mistral-Nemo-Instruct-2407",
             "--download-dir",
             "/models-cache",
             "--dtype", "float16",
