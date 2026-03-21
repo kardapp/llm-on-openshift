@@ -61,8 +61,8 @@ spec:
               value: /models-cache/.cache/vllm
             - name: VLLM_PORT
               value: "8000"
-            - name: VLLM_LOGGING_LEVEL
-              value: DEBUG
+            {# - name: VLLM_LOGGING_LEVEL
+              value: DEBUG #}
           args: [
             "--model",
             "google/codegemma-7b-it",
