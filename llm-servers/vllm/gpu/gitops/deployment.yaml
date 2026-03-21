@@ -48,11 +48,11 @@ spec:
             failureThreshold: 3
           env:
             - name: HUGGING_FACE_HUB_TOKEN
-              #valueFrom:
-              #  secretKeyRef:
-              #    name: hf-token
-              #    key: HUGGING_FACE_HUB_TOKEN
-              value: ''
+              valueFrom:
+                secretKeyRef:
+                  name: hf-token
+                  key: HUGGING_FACE_HUB_TOKEN
+              #value: ''
             - name: HOME
               value: /models-cache
             - name: HF_HOME
