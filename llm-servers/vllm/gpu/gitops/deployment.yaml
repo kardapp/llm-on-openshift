@@ -63,12 +63,11 @@ spec:
               value: "8000"
           args: [
             "--model",
-            "mistralai/Mistral-Nemo-Instruct-2407",
+            "Qwen/Qwen3-8B",
             "--download-dir",
             "/models-cache",
             "--dtype", "float16",
             "--gpu-memory-utilization", "0.9",
-            "--max-model-len", "28784",
             "--tensor-parallel-size", "1"
             ]
           securityContext:
