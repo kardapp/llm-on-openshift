@@ -68,6 +68,7 @@ spec:
             "/models-cache",
             "--dtype", "float16",
             "--gpu-memory-utilization", "0.9",
+            "--max-model-len", "28784",
             "--tensor-parallel-size", "1"
             ]
           securityContext:
