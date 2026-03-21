@@ -65,7 +65,7 @@ spec:
               value: DEBUG
           args: [
             "--model",
-            "Qwen/Qwen3.5-9B",
+            "google/codegemma-7b-it",
             "--download-dir",
             "/models-cache",
             "--dtype", "float16",
